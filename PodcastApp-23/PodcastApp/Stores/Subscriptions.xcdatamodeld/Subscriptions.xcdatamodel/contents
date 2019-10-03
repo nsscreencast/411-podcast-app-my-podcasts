@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Podcast" representedClassName="PodcastEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="artworkURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedURLString" attributeType="String" syncable="YES"/>
+        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="podcastDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="subscription" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Subscription" inverseName="podcast" inverseEntity="Subscription" syncable="YES"/>
+    </entity>
+    <entity name="Subscription" representedClassName="SubscriptionEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="dateSubscribed" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="podcast" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Podcast" inverseName="subscription" inverseEntity="Podcast" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Podcast" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Subscription" positionX="-54" positionY="45" width="128" height="75"/>
+    </elements>
+</model>
